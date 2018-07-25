@@ -17,7 +17,11 @@ namespace PieShop.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(_pieRepository.GetPies());
+            ViewBag.Title = "List of Pies";
+
+            var pies = _pieRepository.GetPies();
+
+            return View(pies);
         }
     }
 }
