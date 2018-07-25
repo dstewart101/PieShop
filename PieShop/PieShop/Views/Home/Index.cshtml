@@ -1,19 +1,10 @@
-﻿
-@model IEnumerable<PieShop.Models.Pie>
+﻿@model IEnumerable<PieShop.Models.Pie>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <h2>@ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 
-    @foreach (var pie in Model)
-    {
-        <div>
-            <h3>@pie.Name</h3>
-            <h4>@pie.Price.ToString("c")</h4>
-        </div>
-    }
-</body>
-</html>
+@foreach (var pie in Model) {
+    <div>
+        <h3>@pie.Name</h3>
+        <h4>@pie.Price.ToString("c")</h4>
+    </div>
+}
