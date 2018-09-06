@@ -15,5 +15,7 @@ namespace PieShop.Models
         public string ImageUrl { get; set; }
         public string ImageThumbnailUrl { get; set; }
         public bool IsPieOfTheWeek { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

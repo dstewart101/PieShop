@@ -5,13 +5,16 @@ using PieShop.Interfaces;
 
 namespace PieShop.Controllers
 {
-    public class HomeController : Controller
+    public class PieController : Controller
     {
 
         private IPieRepository _pieRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public HomeController(IPieRepository pieRepository) {
+        public PieController(IPieRepository pieRepository, ICategoryRepository categoryRepository) {
             _pieRepository = pieRepository;
+            _categoryRepository = categoryRepository;
+
         }
 
         // GET: /<controller>/
