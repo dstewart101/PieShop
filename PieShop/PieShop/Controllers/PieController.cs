@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PieShop.Interfaces;
+using PieShop.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,11 +21,12 @@ namespace PieShop.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.Title = "List of Pies";
+            PieListViewModel pieListViewModel = new PieListViewModel();
 
-            var pies = _pieRepository.GetPies();
+            pieListViewModel.CurrentCategory = "All the pies we got";
+            pieListViewModel.Pies = _pieRepository.GetPies();
 
-            return View(pies);
+            return View(pieListViewModel);
         }
     }
 }
