@@ -11,10 +11,6 @@ namespace PieShop.Models
     {
         private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
 
-        public List<Pie> piebalds = new List<Pie>() {
-            new Pie { Category =  }
-        }
-
         public IEnumerable<Pie> GetPies() {
             return new List<Pie>() {
                 new Pie { Id = 1, Name = "Apple Pie", Price = 12.95M, IsPieOfTheWeek = true, ShortDescription = "Yummy Apple Pie", LongDescription = "Lengthy apple pie", ImageThumbnailUrl = "images/thumbs/apple.jpg", ImageUrl = "images/apple.jpg", CategoryId = 1, Category = _categoryRepository.Categories.ToList()[0] },
